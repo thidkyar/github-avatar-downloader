@@ -1,6 +1,6 @@
-var request = require('request')
-var secrets = require('./secrets')
-var fs = require('fs')
+var request = require('request') //request
+var secrets = require('./secrets') //secrets.js file
+var fs = require('fs') //filesystem
 
 var repoOwner = process.argv[2] //Command line argument defined
 var repoName = process.argv[3]
@@ -15,7 +15,7 @@ function getRepoContributors(repoOwner, repoName, cb) {
     url: "https://api.github.com/repos/" + repoOwner + "/" + repoName + "/contributors",
     headers: {
       'User-Agent': 'request',
-      'Authorization': 'token ' + secrets.GITHUB_TOKEN
+      'Authorization': 'token ' + secrets.GITHUB_TOKEN //authorization token retrived from secrets.js file
     }
   };
   var avatarURL = '';
